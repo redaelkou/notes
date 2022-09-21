@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(0, 0, 0, .7);
+    font-family: 'popins', sans-serif;
+}
+
+.noteApp {
+    margin: 44px auto;
+    width: 60%;
+    height: 60px;
+    background-color: black;
+    border-radius: 6px;
+}
+.noteApp input {
+    width: 80%;
+    height: 40px;
+    border: 1px solid rgb(105, 104, 104);
+    border-radius: 4px;
+    margin: 10px 0 0 10px;
+    padding: 4px;
+    outline: none;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.noteApp input[placeholder] {
+    font-size: 17px;
+    color: white;
+}
+
+.noteApp .submitBtn {
+    width: 16%;
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid gray;
+    background-color: rgb(7, 160, 7);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.noteApp .submitBtn:hover {
+    background-color: rgb(7, 202, 7);
+}
+
+.tasks {
+    margin: 34px auto;
+    width: 84%;
+    height: auto;
+    border-radius: 4px;
+    position: relative;
+}
+
+.tasks ul {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    border-radius: 4px;
+}
+.tasks ul li {
+    list-style: none;
+    margin: 4px;
+    padding: 12px 120px 12px 6px;
+    position: relative;
+}
+
+.tasks ul li span {
+    width: 90%;
+    word-wrap: break-word;
+    line-height: 28px;
+    outline: none;
+    color: white;
+}
+
+.tasks ul li i {
+    cursor: pointer;
+    position: absolute;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+
+
+.tasks ul li .fa-trash {
+    right: 10px;
+    top: 50%;
+    color: rgb(220, 10, 10);
+
+}
+
+.tasks ul li .fa-floppy-disk {
+    right: 40px;
+    top: 50%;
+    color: rgb(171, 170, 170);
+}
+
+.tasks ul li .fa-pen-to-square {
+    right: 50px;
+    top: 50%;
+    color: rgb(3, 174, 3);
+}
+
+
+.noteApp .overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    visibility: hidden;
+    z-index: 1;
+    transition: all 0.1s;
+    transform: scale(0);
+}
+
+.noteApp .overlay.hideClass {
+    visibility: visible;
+    transform: scale(1);
+}
+
+.noteApp .overlay .overlayMessage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 300px;
+    height: 144px;
+    border-radius: 6px;
+    line-height: 144px;
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+}
+
+.noteApp .overlay button {
+    width: 44px;
+    height: 33px;
+    background-color: rgb(11, 205, 11);
+    color: white;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    cursor: pointer;
+}
+
+.noteApp .notesInfoAndPendings {
+    margin: 20px auto;
+    width: 80%;
+    background-color: black;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.noteApp .notesInfoAndPendings p {
+    font-size: 19px;
+    color: white;
+}
+
+.noteApp .notesInfoAndPendings button {
+    width: 140px;
+    height: 30px;
+    background-color: red;
+    float: right;
+    font-size: 19px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.noteApp .clearAllOverlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    visibility: hidden;
+    z-index: 1;
+    transition: all 0.1s;
+    transform: scale(0);
+}
+
+.noteApp .clearAllOverlayMessage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 300px;
+    height: 144px;
+    border-radius: 6px;
+    line-height: 144px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.noteApp .clearAllBletBtn {
+    width: 50px;
+    height: 24px;
+    background-color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+}
+
+.noteApp .clearAllBletBtn:hover {
+    background-color: rgb(230, 228, 228);
+}
+
+.noteApp .cancel {
+    position: absolute;
+    bottom: 4px;
+    right: 60px;
+    background-color: green;
+    color: white;
+    width: 70px;
+    border-radius: 3px;
+    border: none;
+    height: 24px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.noteApp .cancel:hover {
+    background-color: rgb(19, 193, 19);
+}
+
+.noteApp .clearAllOverlay.clearAllOverlayHideClass {
+    visibility: visible;
+    transform: scale(1);
+}
+
+@media only screen and (max-width: 740px) {
+    .noteApp {
+        width: 98%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .tasks {
+        width: 98%;
+        margin: 10px;
+    }
+    .noteApp .notesInfoAndPendings {
+        width: 98%;
+        flex-direction: column;
+    }
+    .noteApp .notesInfoAndPendings button {
+        margin-top: 6px;
+    }
+    .noteApp .clearAllOverlayMessage {
+        width: 90%;
+        height: 144px;
+    }
+    
+    .noteApp .overlay .overlayMessage {
+        width: 90%;
+        height: 144px;
+    }
+    .noteApp input {
+        width: 60%;
+    }
+    .noteApp .submitBtn {
+        width: 30%;
+    }
+    .tasks ul li i {
+        font-size: 18px;
+    }
+    
+    .tasks ul li .fa-trash {
+        right: 6px;
+
+    }
+
+    .tasks ul li .fa-floppy-disk {
+        right: 30px;
+    }
+
+    .tasks ul li .fa-pen-to-square {
+        right: 36px;
+    }
+
+}
